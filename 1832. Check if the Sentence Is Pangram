@@ -1,0 +1,26 @@
+1832. Check if the Sentence Is Pangram
+
+Java Solution
+
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        boolean[] num = new boolean[26];
+        if(sentence.length() < 26)
+        {
+            return false;
+        }
+        for(int i=0;i<sentence.length();i++)
+        {
+            num[sentence.charAt(i)-'a'] = true;
+        }
+        for(int i=0;i<26;i++)
+        {
+            if(num[i] == false)
+            {
+                return false;
+            }
+        }
+        return true;
+
+    }
+}
